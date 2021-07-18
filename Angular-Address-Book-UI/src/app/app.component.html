@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-4">
+      <h1 class="text-center">Contact List</h1>
+      <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">First Name</th>
+            <th class="text-center">Last Name</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Phone Number</th>
+            <th class="text-center">Status</th>
+            <th class="text-center">&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contact of contacts; let i= index">
+            <td>{{ i+1 }}</td>
+            <td>{{ contact.firstName }}</td>
+            <td>{{ contact.lastName }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.phoneNumber }}</td>
+            <td>{{ contact.status }}</td>
+            <td>
+              <button type="button" class="btn btn-info btn-sm mr-2" (click)="showEditContactForm(contact)">Edit</button>
+
+              <button type="button" class="btn btn-danger btn-sm" (click)="removeContact(contact)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-success" (click)="showAddContactForm()">Add New Contact</button>
+
+      <div class="mt-4">
+        <form *ngIf="addContactForm">
+          <h2>Add New Contact</h2>
+          <p>First Name: <input type="text" name="firstName" [(ngModel)]="newContact.firstName" /></p>
+          <p>Last Name: <input type="text" name="lastName" [(ngModel)]="newContact.lastName" /></p>
+          <p>Email: <input type="text" name="email" [(ngModel)]="newContact.email" /></p>
+          <p>Phone Number: <input type="text" name="phoneNumber" [(ngModel)]="newContact.phoneNumber" /></p>
+          <p>Status: <input type="text" name="status" [(ngModel)]="newContact.status" /></p>
+          <p>
+            <button type="button" class="btn btn-primary mr-2" (click)="createContact(newContact)">Submit</button>
+            <button type="button" class="btn btn-warning" (click)="cancelNewContact()">Cancel</button>
+          </p>
+        </form>
+
+        <form *ngIf="editContactForm">
+          <h2>Edit Contact Details</h2>
+          <p>First Name: <input type="text" name="firstName" [(ngModel)]="editContact.firstName" /></p>
+          <p>Last Name: <input type="text" name="lastName" [(ngModel)]="editContact.lastName" /></p>
+          <p>Email: <input type="text" name="email" [(ngModel)]="editContact.email" /></p>
+          <p>Phone Number: <input type="text" name="phonenumber" [(ngModel)]="editContact.phoneNumber" /></p>
+          <p>Status: <input type="text" name="status" [(ngModel)]="editContact.status" /></p>
+          <p>
+            <button type="button" class="btn btn-primary mr-2" (click)="updateContact()">Submit</button>
+            <button type="button" class="btn btn-warning" (click)="cancelEdits()">Cancel</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

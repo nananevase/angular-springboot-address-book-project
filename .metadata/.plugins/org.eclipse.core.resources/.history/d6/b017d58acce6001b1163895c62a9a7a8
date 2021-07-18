@@ -1,0 +1,17 @@
+package com.springboot.addressbook;
+
+import java.util.List;
+
+public class Employee {
+	private String id;
+	private String name;
+	private List<String> list;
+	
+	Employee( String id, String name, List<String> list){
+		this.id = id;
+		this.name = name;
+		this.list = list;
+	}
+	
+
+}

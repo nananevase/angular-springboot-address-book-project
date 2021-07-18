@@ -1,0 +1,17 @@
+package com.springboot.addressbook.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.springboot.addressbook.entity.Contact;
+
+/**
+ * a repository class to extend JPA repository which provide all
+ * crud method default for that entity .
+ * @author KJ
+ * @version 1.0
+ * @since 2018-05-25
+ */
+@Repository
+public interface ContactRepository extends JpaRepository<Contact, Long> {
+}
