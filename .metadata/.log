@@ -1408,3 +1408,18 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: end tag nam
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-18 10:09:14.712
 !MESSAGE executing callback sts4.classpath.lEeDDFuj SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-07-18 20:35:54.846
+!MESSAGE Unknown or unsupported source locator org.eclipse.jdt.internal.launching.sourcelookup.advanced.AdvancedSourceLookupDirector
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-18 20:36:46.567
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.lEeDDFuj
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-18 20:36:46.568
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.lEeDDFuj
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-18 20:36:46.570
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-18 20:36:46.571
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.lEeDDFuj => OK

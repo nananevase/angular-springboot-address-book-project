@@ -849,3 +849,7 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: end tag nam
 2021-07-18 10:27:02,316 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
 2021-07-18 10:28:12,738 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
 2021-07-18 10:28:26,596 [Worker-61: Launching spring-boot-address-book (2)] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Workspace\spring-boot-address-book
+2021-07-18 10:28:26,597 [Worker-61: Launching spring-boot-address-book (2)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Pproduction -B clean install -Dstyle.color=always
+2021-07-18 20:35:54,827 [Worker-71: Launching spring-boot-address-book (2)] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Workspace\spring-boot-address-book
+2021-07-18 20:35:54,834 [Worker-71: Launching spring-boot-address-book (2)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Pproduction -B clean install -Dstyle.color=always
+2021-07-18 20:35:54,836 [Worker-71: Launching spring-boot-address-book (2)] WARN  o.e.m.i.l.MavenLaunchExtensionsSupport - Unknown or unsupported source locator org.eclipse.jdt.internal.launching.sourcelookup.advanced.AdvancedSourceLookupDirector
