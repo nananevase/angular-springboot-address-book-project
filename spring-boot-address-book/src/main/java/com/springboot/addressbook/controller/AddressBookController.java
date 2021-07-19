@@ -33,54 +33,49 @@ public class AddressBookController {
      */
     @PostMapping(value = "/createContact")
     public ResponseEntity<?> createContact(@RequestBody Contact contact) {
-        Contact createdUser = contactService.createContact(contact);
-        return new ResponseEntity<Object>(createdUser, HttpStatus.CREATED);
+        Contact createdContact = contactService.createContact(contact);
+        return new ResponseEntity<Object>(createdContact, HttpStatus.CREATED);
     }
 
-    /*** get a USER by ID in GET request, end point is http://hostname:port/api/va1/user/id
-     * @param userId
-     * @return
+   
+    /**
+     * Gets the contacts.
+     *
+     * @return the contacts
      */
-
-    @GetMapping(value = "/user/{id}")
-    public ResponseEntity<?> getUserById(@PathVariable("id") Long userId) {
-        Contact contact = contactService.findUserById(userId);
-        if (contact == null) {
-            MessageResponse messageResponse = new MessageResponse();
-            messageResponse.setMessage("User not found.");
-            return new ResponseEntity<Object>(messageResponse, HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<Object>(contact, HttpStatus.OK);
-    }
-
-    /**get all list of users based on GET request.
-     * @return
-     */
-
     @GetMapping(value = "/getContacts")
-    public ResponseEntity<?> getAllUsers() {
-        List<Contact> userList = contactService.findAllUsers();
-        return new ResponseEntity<Object>(userList, HttpStatus.OK);
+    public ResponseEntity<?> getContacts() {
+        List<Contact> contactList = contactService.findAllContacts();
+        return new ResponseEntity<Object>(contactList, HttpStatus.OK);
     }
 
-    /**Update a user based on PUT request.
-     * @param userId
-     * @param contact
-     * @return
+    
+    /**
+     * Update contact.
+     *
+     * @param userId the user id
+     * @param contact the contact
+     * @return the response entity
      */
     @PutMapping(value = "/updateContact/{id}")
     public ResponseEntity<?> updateContact(@PathVariable("id") Long userId, @RequestBody Contact contact) {
         contact.setId(userId);
-        Contact updatedUser = contactService.updateContact(contact);
-        return new ResponseEntity<Object>(updatedUser, HttpStatus.OK);
+        Contact updatedContact = contactService.updateContact(contact);
+        return new ResponseEntity<Object>(updatedContact, HttpStatus.OK);
     }
 
     
+    /**
+     * Delete contact.
+     *
+     * @param userId the user id
+     * @return the response entity
+     */
     @DeleteMapping(value = "/deleteContact/{id}")
     public ResponseEntity<?> deleteContact(@PathVariable("id") Long userId) {
         contactService.deleteContact(userId);
         MessageResponse messageResponse = new MessageResponse();
-        messageResponse.setMessage("User has been deleted successfully.");
+        messageResponse.setMessage("Contact has been deleted successfully.");
         return new ResponseEntity<Object>(messageResponse, HttpStatus.OK);
     }
 }

@@ -8,9 +8,7 @@ public interface ContactService {
 
     Contact createContact(Contact contact);
 
-    Contact findUserById(Long userId);
-
-    List<Contact> findAllUsers();
+    List<Contact> findAllContacts();
 
     Contact updateContact(Contact contact);
 
