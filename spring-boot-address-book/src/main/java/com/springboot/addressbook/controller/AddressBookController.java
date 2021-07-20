@@ -50,30 +50,32 @@ public class AddressBookController {
     }
 
     
+    
     /**
      * Update contact.
      *
-     * @param userId the user id
+     * @param contactId the contact id
      * @param contact the contact
      * @return the response entity
      */
     @PutMapping(value = "/updateContact/{id}")
-    public ResponseEntity<?> updateContact(@PathVariable("id") Long userId, @RequestBody Contact contact) {
-        contact.setId(userId);
+    public ResponseEntity<?> updateContact(@PathVariable("id") Long contactId, @RequestBody Contact contact) {
+        contact.setId(contactId);
         Contact updatedContact = contactService.updateContact(contact);
         return new ResponseEntity<Object>(updatedContact, HttpStatus.OK);
     }
 
     
+    
     /**
      * Delete contact.
      *
-     * @param userId the user id
+     * @param id the id
      * @return the response entity
      */
     @DeleteMapping(value = "/deleteContact/{id}")
-    public ResponseEntity<?> deleteContact(@PathVariable("id") Long userId) {
-        contactService.deleteContact(userId);
+    public ResponseEntity<?> deleteContact(@PathVariable("id") Long id) {
+        contactService.deleteContact(id);
         MessageResponse messageResponse = new MessageResponse();
         messageResponse.setMessage("Contact has been deleted successfully.");
         return new ResponseEntity<Object>(messageResponse, HttpStatus.OK);

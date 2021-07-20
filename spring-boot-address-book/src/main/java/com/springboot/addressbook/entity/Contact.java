@@ -3,6 +3,9 @@ package com.springboot.addressbook.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 
+/**
+ * The Class Contact.
+ */
 @Entity
 @Table(name = "contact")
 public class Contact implements Serializable {

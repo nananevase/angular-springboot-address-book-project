@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 import com.springboot.addressbook.entity.Contact;
 import com.springboot.addressbook.repository.ContactRepository;
 
+/**
+ * The Class ContactServiceImpl.
+ */
 @Transactional
 @Service("contactService")
 public class ContactServiceImpl implements ContactService {
@@ -52,16 +55,15 @@ public class ContactServiceImpl implements ContactService {
     public Contact updateContact(Contact contact) {
         return contactRepository.save(contact);
     }
-
-   
+    
     /**
      * Delete contact.
      *
-     * @param userId the user id
+     * @param id the id
      */
     @Override
-    public void deleteContact(Long userId) {
-        contactRepository.deleteById(userId);
+    public void deleteContact(Long id) {
+        contactRepository.deleteById(id);
 
     }
 }
